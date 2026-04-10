@@ -99,7 +99,63 @@ Credenciais fracas permitem acesso não autorizado como username: msfadmin  pass
 <img width="378" height="178" alt="image" src="https://github.com/user-attachments/assets/9d1c57ae-a7c3-411b-baa2-97863bb428cc" />
 
 
+##  Criação de Wordlists
+
+Para a realização dos ataques de força bruta, foram criadas listas de usuários e senhas (wordlists), simulando credenciais fracas comuns em ambientes reais.
+
+###  Criando lista de usuários
+
+```bash
+nano users.txt
+```
+
+ **O que faz:**
+Abre o editor de texto para criar um arquivo contendo possíveis nomes de usuários.
+
+Exemplo de conteúdo:
+
+```
+msfadmin
+admin
+user
+test
+```
+
 ---
+
+###  Criando lista de senhas
+
+```bash
+nano pass.txt
+```
+
+ **O que faz:**
+Cria um arquivo com senhas comuns utilizadas em ataques de força bruta.
+
+Exemplo de conteúdo:
+
+```
+123456
+password
+admin
+msfadmin
+```
+
+---
+
+###  Interpretação
+
+A utilização de wordlists permite automatizar tentativas de login, explorando o uso de credenciais fracas.
+
+---
+<img width="710" height="121" alt="image" src="https://github.com/user-attachments/assets/a90e4419-dd97-401c-9e27-170111f6484a" />
+<img width="536" height="93" alt="image" src="https://github.com/user-attachments/assets/a1b7fe02-e8d7-4cce-9646-fe63d5eac52b" />
+
+
+
+
+
+
 
 ##  DVWA (Web)
 
