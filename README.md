@@ -37,9 +37,12 @@ Este projeto tem como objetivo demonstrar, de forma prática, a execução de at
 
 bash
 ip a
+
 <img width="646" height="513" alt="image" src="https://github.com/user-attachments/assets/4d14a6c7-745b-4a60-9370-2903d5a5d723" />
 
 ifconfig
+
+
 <img width="722" height="490" alt="image" src="https://github.com/user-attachments/assets/af3b5051-e5a2-47b5-9152-8c7819e0a500" />
 
 
