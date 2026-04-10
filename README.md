@@ -220,10 +220,15 @@ bash
 medusa -h 192.168.80.128 -U users.txt -P pass.txt -M smbnt -t 6
 
 medusa → ferramenta de ataque de força bruta
+
 -h 192.168.80.128 → define o endereço do alvo
+
 -U users.txt → arquivo com lista de usuários
+
 -P pass.txt → arquivo com lista de senhas
+
 -M smbnt → módulo utilizado para atacar o serviço SMB
+
 -t 6 → número de tentativas simultâneas (threads)
 
 <img width="1286" height="368" alt="image" src="https://github.com/user-attachments/assets/03c159c6-a400-480b-b668-8adb6a5ef71b" />
