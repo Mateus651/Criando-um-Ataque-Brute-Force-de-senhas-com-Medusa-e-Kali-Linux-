@@ -177,9 +177,13 @@ medusa -h 192.168.80.128 -U users.txt -P pass.txt -M http \
 
 
 192.168.80.128 é o endereço IP do alvo.
+
 -U users.txt está informando o arquivo com os nomes de usuários.
+
 -P pass.txt vai informar o arquivo com as senhas.
+
 -M http vai indicar que o módulo HTTP será usado para interagir com aplicações web.
+
 -m PAGE:'/dvwa/login.php' \ vai informar o caminho do formulário de login do servidor web.
 
 -m FORM:'username=^USER^&password=^PASS^&Login=Login' \ será o corpo da requisição.
